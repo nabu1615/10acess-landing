@@ -2,4 +2,83 @@
 layout: layouts/base.njk
 title: Title Strings
 ---
-<h1>This is global data: {{siteData.name}}</h1>
+
+<article class="hero">
+    <img class='hero__image' src="images/hero.jpg" alt="">
+    <div class="hero__content">
+        <h1 class="hero__title">Place Holder</h1>
+        <div class="hero__copy">Clases Online Duracion 15 minutos</div>
+        <div class="hero__price">$ XXX.000 COP</div>
+        <button class="cta cta--primary">comprar</button>
+    </div>
+</article>
+
+
+<article class="featured">
+    <h2 class="featured__title title--primary">Descripcion - quienes somos</h2>
+    <div class="dropdown">
+        <input type="checkbox" id="featured-expanded" class="dropdown__input" />
+        <p class="dropdown__copy featured__copy">
+            Texto corrido introductorio, expectativas del contenido, beneficios de
+            10 Access. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+            aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+            exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+            commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
+            vulputate velit esse molestie consequat, vel illum dolore eu feugiat
+            nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+            blandit praesent luptatum zzril delenit augue duis dolore te feugait
+            nulla facilisi.
+        </p>
+        <label
+            class="dropdown__button"
+            for="featured-expanded"
+            role="button"
+        >
+            <img src="images/arrow.svg" alt="">
+        </label>
+    </div>
+</article>
+
+<article class="props">
+    <div class="props__content">
+        <h2 class="props__title title--primary">Beneficios del curso</h2>
+        <p class="props__copy">
+        </p>
+        <div class="dropdown">
+            <input type="checkbox" id="props-expanded" class="dropdown__input" />
+            <p class="dropdown__copy props__copy">
+                Texto corrido introductorio, expectativas del contenido, beneficios de
+                10 Access. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+                exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+                commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
+                vulputate velit esse molestie consequat, vel illum dolore eu feugiat
+                nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+                blandit praesent luptatum zzril delenit augue duis dolore te feugait
+                nulla facilisi.
+            </p>
+            <label
+                class="dropdown__button"
+                for="props-expanded"
+                role="button"
+            >
+                <img src="images/arrow.svg" alt="">
+            </label>
+        </div>
+        <div class="props__action">
+            <div class="props__price">$ XXX.000 COP</div>
+            <button class="cta cta--secondary">comprar</button>
+        </div>
+    </div>
+    <div class="props__video">
+        <iframe 
+            src="https://www.youtube.com/embed/6RaOD39W8iQ?loop=1&modestbranding=1" 
+            width="100%"
+            height="315" 
+            frameborder="0"
+            allowfullscreen="">
+        </iframe>
+    </div>
+</article>
