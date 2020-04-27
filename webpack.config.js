@@ -1,10 +1,11 @@
-const path = require('path');
+const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
-  entry: './src/scripts/index.js',
+  entry: "./src/scripts/index.js",
   output: {
-    path: path.resolve(__dirname, 'dist/scripts'),
-    filename: 'index.js'
+    path: path.resolve(__dirname, "dist/scripts"),
+    filename: "index.js",
   },
   module: {
     rules: [
@@ -12,12 +13,12 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ]
-  }
-}
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+    ],
+  },
+};
