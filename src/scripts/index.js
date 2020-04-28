@@ -6,11 +6,15 @@ var flkty = new Flickity(elem, {
 
 const $form = document.getElementById("newsletter-form"),
   url =
-    "https://script.google.com/macros/s/AKfycbxOW4lOiHaIne2bDWOK-4nRrwVWZC6c2VG6jH0pr1iBftLdsPfU/exec";
+    "https://script.google.com/macros/s/AKfycbyuGe7F61RCg-N2f2U06kubLpemmEh9TAB6TRu5Bdps4QX1_8I/exec";
 
-document.getElementById("newsletter-submit").addEventListener("submit", (e) => {
+$form.addEventListener("submit", (e) => {
   e.preventDefault();
-  fetch(url, { method: "POST", body: new FormData($form) })
-    .then((response) => console.log("Success!", response))
+
+  fetch(url, { method: "POST", mode: "no-cors", body: new FormData($form) })
+    .then((response) => {
+      alert("Registro Exitoso");
+      $form.reset();
+    })
     .catch((error) => console.error("Error!", error.message));
 });
