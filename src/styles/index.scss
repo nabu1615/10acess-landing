@@ -1,11 +1,29 @@
 @import "_reset.scss";
 
 $primary-color: #59b9b7;
+$dark-blue: #191832;
 $gray-light: #848484;
 $gray-bg: #f8f7f7;
 
 body {
   background-color: white;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.5s;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 p {
@@ -130,7 +148,7 @@ blockquote {
 
   @media only screen and (min-width: 600px) {
     padding: 0 50px;
-    min-height: 70vh;
+    min-height: 50vh;
   }
 }
 
@@ -184,6 +202,20 @@ blockquote {
   background-color: $gray-bg;
   margin: 0 auto;
   max-width: 120ch;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    background-color: $primary-color;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    right: -5%;
+    bottom: -20%;
+    opacity: 0.2;
+    position: absolute;
+  }
 
   @media only screen and (min-width: 600px) {
     padding: 0 0 0 50px;
@@ -207,18 +239,24 @@ blockquote {
   @media only screen and (min-width: 120ch) {
     &__video {
       align-self: auto;
+
       iframe {
         width: 90%;
         height: 90%;
         position: absolute;
-        right: 0;
-        top: -20%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
       }
     }
   }
 
   &__video {
     margin-top: 30px;
+
+    @media only screen and (min-width: 120ch) {
+      margin-top: 0;
+    }
 
     iframe {
       max-height: 400px;
@@ -250,7 +288,7 @@ blockquote {
   margin: 30px auto;
 
   @media only screen and (min-width: 900px) {
-    margin: 120px auto;
+    margin: 80px auto;
   }
 
   &__copy {
@@ -258,7 +296,7 @@ blockquote {
     text-align: center;
 
     @media only screen and (min-width: 900px) {
-      max-width: 60ch;
+      max-width: 80ch;
       margin: 20px auto 80px auto;
     }
   }
@@ -377,6 +415,16 @@ blockquote {
   color: $gray-light;
   margin: 0 auto;
   padding: 0 80px;
+  font-style: italic;
+
+  figcaption {
+    text-align: right;
+    margin-top: 5px;
+    font-weight: 900;
+    &:before {
+      content: "—";
+    }
+  }
 
   @media only screen and (min-width: 600px) {
     max-width: 60ch;
@@ -384,42 +432,32 @@ blockquote {
   }
 }
 
-blockquote:before,
-blockquote:after {
-  display: inline-block;
-  height: 40px;
-  font-size: 80px;
-  opacity: 1;
-  position: absolute;
-  color: #595959;
-  line-height: 80px;
-}
-
-@media only screen and (min-width: 600px) {
-  blockquote:before {
-    content: "\201C";
-  }
-
-  blockquote:after {
-    content: "\201D";
-  }
-}
-
-blockquote:before {
-  top: -8px;
-  left: -40px;
-}
-
-blockquote:after {
-  bottom: 0;
-  right: 0;
-  margin-right: -20px;
-}
-
 .testimonies {
   background: $gray-bg;
   padding: 60px 0;
   position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 10px;
+    background-color: $primary-color;
+    top: 0;
+  }
+
+  &:before {
+    content: "";
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    background-color: $primary-color;
+    border-radius: 100%;
+    right: -5%;
+    bottom: -30%;
+    opacity: 0.2;
+  }
 
   .flickity-page-dots {
     position: absolute;
@@ -437,6 +475,12 @@ blockquote:after {
   &__item {
     width: 100%;
     max-width: 120ch;
+    opacity: 0;
+    transition: all 0.5;
+
+    &.is-selected {
+      opacity: 1;
+    }
 
     @media only screen and (min-width: 600px) {
       padding: 0 80px;
@@ -522,6 +566,132 @@ blockquote:after {
 
     &:hover {
       opacity: 0.7;
+    }
+  }
+}
+
+.footer {
+  background-color: $dark-blue;
+  color: white;
+  position: relative;
+
+  &__wrapper {
+    text-align: center;
+    max-width: 120ch;
+    margin: 0 auto;
+    position: relative;
+    padding: 60px 50px 0;
+
+    @media only screen and (min-width: 900px) {
+      text-align: left;
+      padding: 80px 0 20px;
+    }
+  }
+
+  ul {
+    margin: 30px 0;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__language {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+
+    @media only screen and (min-width: 900px) {
+      justify-content: flex-end;
+    }
+
+    li {
+      font-size: 14px;
+
+      &:first-child {
+        &::after {
+          content: "/";
+          padding: 0 5px;
+        }
+      }
+
+      a {
+        color: white;
+      }
+    }
+  }
+
+  &__nav {
+    flex-direction: column;
+    text-align: center;
+
+    @media only screen and (min-width: 900px) {
+      text-align: left;
+    }
+
+    li {
+      font-size: 14px;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: white;
+    }
+  }
+
+  &__social,
+  &__nav,
+  &__language {
+    display: flex;
+  }
+
+  &__social {
+    justify-content: center;
+
+    @media only screen and (min-width: 900px) {
+      justify-content: flex-start;
+    }
+
+    li {
+      padding: 0 5px;
+
+      a {
+        color: white;
+      }
+    }
+  }
+
+  &__chat {
+    margin: 0 auto;
+    background-color: $primary-color;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    order: 1;
+    color: white;
+
+    @media only screen and (min-width: 900px) {
+      border-radius: 5px;
+      position: absolute;
+      top: -10%;
+      right: 0;
+    }
+
+    span {
+      font-size: 10px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    &-icon {
+      color: $dark-blue;
+      display: inline-block;
+      font-size: 1.8em;
+      font-weight: 900;
     }
   }
 }

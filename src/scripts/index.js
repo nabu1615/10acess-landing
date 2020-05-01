@@ -12,7 +12,7 @@ $form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   fetch(url, { method: "POST", mode: "no-cors", body: new FormData($form) })
-    .then((response) => {
+    .then(() => {
       alert("Registro Exitoso");
       $form.reset();
     })
