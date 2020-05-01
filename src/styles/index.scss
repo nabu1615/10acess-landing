@@ -37,12 +37,20 @@ blockquote {
   font-family: "Quicksand", sans-serif;
 }
 
+.logo {
+  width: 180px;
+
+  @media only screen and (min-width: 600px) {
+    display: none;
+  }
+}
+
 .title--primary {
   text-align: center;
   color: $primary-color;
 
   @media only screen and (min-width: 600px) {
-    font-size: 54px;
+    font-size: 44px;
     margin-block-start: 0.53em;
     margin-block-end: 0.53em;
   }
@@ -253,6 +261,7 @@ blockquote {
 
   &__video {
     margin-top: 30px;
+    position: relative;
 
     @media only screen and (min-width: 120ch) {
       margin-top: 0;
@@ -266,6 +275,11 @@ blockquote {
   &__price {
     color: $primary-color;
     font-weight: 500;
+    text-align: center;
+
+    @media only screen and (min-width: 600px) {
+      text-align: left;
+    }
   }
 
   &__action {
@@ -285,7 +299,7 @@ blockquote {
 
 .cards {
   max-width: 120ch;
-  margin: 30px auto;
+  margin: 30px auto 0;
 
   @media only screen and (min-width: 900px) {
     margin: 80px auto;
@@ -414,7 +428,7 @@ blockquote {
   font-size: 14px;
   color: $gray-light;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 40px;
   font-style: italic;
 
   figcaption {
@@ -489,7 +503,7 @@ blockquote {
 }
 
 .newsletter {
-  padding: 0 50px;
+  padding: 0 30px;
   min-height: 40vh;
   display: grid;
   align-content: center;
@@ -560,7 +574,6 @@ blockquote {
     font-weight: 900;
     font-size: 12px;
     position: relative;
-    top: 1.2px;
     right: 4px;
     width: 20%;
 
@@ -673,6 +686,14 @@ blockquote {
     border-radius: 5px 5px 0 0;
     order: 1;
     color: white;
+
+    &:hover {
+      opacity: 1;
+
+      .footer__chat-icon {
+        opacity: 0.8;
+      }
+    }
 
     @media only screen and (min-width: 900px) {
       border-radius: 5px;
