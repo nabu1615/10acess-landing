@@ -432,7 +432,7 @@ blockquote {
   margin: 30px auto 0;
 
   @media only screen and (min-width: 900px) {
-    margin: 80px auto;
+    margin: 80px auto 25px auto;
   }
 
   &__copy {
@@ -445,6 +445,11 @@ blockquote {
     }
   }
 
+  &__button {
+    margin-top: 20px;
+    text-align: center;
+  }
+
   &__wrapper {
     @media only screen and (min-width: 600px) {
       display: grid;
@@ -453,7 +458,7 @@ blockquote {
 
     @media only screen and (min-width: 900px) {
       grid-gap: 20px;
-      grid-template-columns: repeat(4, calc(25% - 15px));
+      grid-template-columns: repeat(3, calc(33.3% - 15px));
     }
   }
 }
@@ -549,6 +554,10 @@ blockquote {
   &__item-cta {
     position: absolute;
     bottom: 0;
+  }
+
+  &__item-title {
+    font-size: 1.8em;
   }
 }
 
