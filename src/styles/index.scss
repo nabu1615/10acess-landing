@@ -473,6 +473,18 @@ blockquote {
     min-height: 250px;
     font-family: "Quicksand", sans-serif;
 
+    &-free {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 99;
+      padding: 5px 9px;
+      font-weight: 900;
+      background-color: #59b9b7;
+      color: white;
+      font-size: 14px;
+    }
+
     &:after {
       content: "";
       width: 100%;
